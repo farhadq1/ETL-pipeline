@@ -30,16 +30,6 @@ def process_log_file(cur, filepath):
 
     # convert timestamp column to datetime
     t = pd.to_datetime(df['ts'], unit='ms')
-#     df['ts'] = pd.to_datetime(df['ts'],unit='ms')
-#     df['length'] = df['length'].astype(float)
-#     t=pd.DataFrame()
-#     t['start_time'] = pd.to_datetime(df['ts']).dt.time
-#     t['hour'] = pd.to_datetime(df['ts']).dt.hour
-#     t['day'] = pd.to_datetime(df['ts']).dt.day
-#     t['week'] = pd.to_datetime(df['ts']).dt.week
-#     t['month'] = pd.to_datetime(df['ts']).dt.month
-#     t['year'] = pd.to_datetime(df['ts']).dt.year
-#     t['weekday'] = pd.to_datetime(df['ts']).dt.weekday
     
     # insert time data records
     time_data = (t.dt.time,t.dt.hour,t.dt.day,t.dt.week,t.dt.month,t.dt.year,t.dt.weekday)
